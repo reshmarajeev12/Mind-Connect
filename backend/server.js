@@ -23,7 +23,10 @@ const server = http.createServer(app);
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: ['https://mindconnect.vercel.app', 'https://mindconnect-admin.vercel.app'],
+  credentials: true
+}));
 
 // api endpoints
 app.use("/api/user", userRouter)
