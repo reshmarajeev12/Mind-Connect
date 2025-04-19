@@ -24,7 +24,10 @@ const server = http.createServer(app);
 // middlewares
 app.use(express.json())
 app.use(cors({
-  origin: ['https://mindconnect.vercel.app', 'https://mindconnect-admin.vercel.app'],
+  origin: [
+        "https://mind-connect-frontend.vercel.app", // ✅ Frontend
+        "https://mind-connect-admin.vercel.app"      // ✅ Admin (if separate)
+    ],
   credentials: true
 }));
 
