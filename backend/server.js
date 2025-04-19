@@ -25,8 +25,8 @@ const server = http.createServer(app);
 app.use(express.json())
 app.use(cors({
   origin: [
-        "https://mind-connect-frontend.vercel.app", // ✅ Frontend
-        "https://mind-connect-admin.vercel.app"      // ✅ Admin (if separate)
+          process.env.CLIENT_URL,  // Frontend URL from .env
+        process.env.ADMIN_URL    // Admin URL from .env
     ],
   credentials: true
 }));
