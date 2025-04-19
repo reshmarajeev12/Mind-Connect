@@ -9,7 +9,10 @@ const connectedUsers = new Map(); // Track userId ↔ socket.id mapping
 const socketServer = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: ["http://localhost:5173", "http://localhost:5174"], // User & Admin frontend
+             origin: [
+                "https://mind-connect-frontend.vercel.app", // ✅ Vercel Frontend
+                "https://mind-connect-admin.vercel.app"      // ✅ If you have admin hosted separately
+            ],
             methods: ["GET", "POST"]
         }
     });
